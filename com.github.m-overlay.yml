@@ -1,0 +1,35 @@
+app-id: com.github.m-overlay
+runtime: org.freedesktop.Platform
+runtime-version: '23.08'
+sdk: org.freedesktop.Sdk
+# command: love application.love
+# rename-desktop-file: m-overlay.desktop
+# rename-icon: m-overlay
+finish-args:
+  - --device=all
+  # the file picker uses portals but the set
+  # game directory feature still needs this
+  - --filesystem=host:ro
+  - --socket=pulseaudio
+  - --env=QT_QPA_PLATFORM=xcb
+  - --socket=x11
+  - --share=network
+  - --share=ipc
+modules:
+
+  - shared-modules/luajit/luajit.json
+  - name: luajit
+
+  - name: love-11.3
+    buildsystem: autotools
+    sources:
+      - type: archive
+        url: https://github.com/love2d/love/releases/download/11.3/love-11.3-linux-src.tar.gz
+        sha256: 649f0db7750ca121e4de7b60208703661052356df35f4cfad490b1ba14dd1455
+
+  # - name: m-overlay
+  #   buildsystem: simple
+  #   # config-opts:
+  #   sources:
+  #     - type: file
+  #       url: https://github.com/bkacjios/m-overlay/releases/latest/download/application.love
