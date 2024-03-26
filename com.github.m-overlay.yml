@@ -2,8 +2,8 @@ app-id: com.github.m-overlay
 runtime: org.freedesktop.Platform
 runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
-command: love /app/bin/application.love
-# command: LoveLaunchWrapper
+# command: love /app/bin/application.love
+command: LoveLaunchWrapper
 # rename-desktop-file: m-overlay.desktop
 # rename-icon: m-overlay
 finish-args:
@@ -38,7 +38,7 @@ modules:
         url: https://github.com/love2d/love/releases/download/11.3/love-11.3-linux-src.tar.gz
         sha256: 649f0db7750ca121e4de7b60208703661052356df35f4cfad490b1ba14dd1455
     build-commands:
-      - ./configure
+      - ./configure --prefix=${FLATPAK_DEST}
       - make install
       # - install -D ./src/.libs/love ${FLATPAK_DEST}/bin/love
       # - install -D ./src/.libs/liblove-11.3.so ${FLATPAK_DEST}/lib/liblove-11.3.so
