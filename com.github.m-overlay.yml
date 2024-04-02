@@ -52,7 +52,7 @@ modules:
       # - install -D ./src/.libs/love ${FLATPAK_DEST}/bin/love
       # - install -D ./src/.libs/liblove-11.3.so ${FLATPAK_DEST}/lib/liblove-11.3.so
       # - ln -s ${FLATPAK_DEST}/lib/liblove-11.3.so ${FLATPAK_DEST}/lib/liblove.so
-      - cp -r ./ ${FLATPAK_DEST}/bin/loveSource
+      # - cp -r ./ ${FLATPAK_DEST}/bin/loveSource
 
   - name: m-overlay
     buildsystem: simple
