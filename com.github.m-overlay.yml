@@ -30,6 +30,15 @@ modules:
           type: anitya
           project-id: 5669
           url-template: https://downloads.sourceforge.net/modplug-xmms/libmodplug-$version.tar.gz
+  
+  - name: libcap
+    buildsystem: simple
+    sources:
+      - type: archive
+        url: https://mirrors.edge.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-2.69.tar.gz
+        sha256: 3a99ec26452e328e0ea408efd67096ef914f4ee4788fa8e8e21f214e2bd670b9
+    build-commands:
+      - make install prefix=${FLATPAK_DEST}
 
   - name: love-11.3
     buildsystem: simple
