@@ -35,8 +35,8 @@ modules:
     buildsystem: simple
     sources:
       - type: archive
-        url: https://mirrors.edge.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-2.69.tar.gz
-        sha256: 3a99ec26452e328e0ea408efd67096ef914f4ee4788fa8e8e21f214e2bd670b9
+        url: https://mirrors.edge.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-2.30.tar.gz
+        sha256: b9848fcc15ccb8ceaae95cc30f69c05796549662368bdf36068f4766ff34435c
     build-commands:
       - make install prefix=${FLATPAK_DEST}
 
@@ -49,10 +49,6 @@ modules:
     build-commands:
       - ./configure --prefix=${FLATPAK_DEST}
       - make install
-      # - install -D ./src/.libs/love ${FLATPAK_DEST}/bin/love
-      # - install -D ./src/.libs/liblove-11.3.so ${FLATPAK_DEST}/lib/liblove-11.3.so
-      # - ln -s ${FLATPAK_DEST}/lib/liblove-11.3.so ${FLATPAK_DEST}/lib/liblove.so
-      # - cp -r ./ ${FLATPAK_DEST}/bin/loveSource
 
   - name: m-overlay
     buildsystem: simple
